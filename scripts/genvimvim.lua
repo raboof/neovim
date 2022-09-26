@@ -112,10 +112,19 @@ for au, _ in pairs(auevents.aliases) do
   end
 end
 
+local function sorted_keys(tab)
+    result = {}
+    for key, _ in pairs(tab) do
+        table.insert(result, key)
+    end
+    table.sort(result)
+    return result
+end
+
 local nvimau_start = 'syn keyword nvimAutoEvent contained '
 w('\n\n' .. nvimau_start)
 
-for au, _ in pairs(auevents.nvim_specific) do
+for _, au in ipairs(sorted_keys(auevents.nvim_specific)) do
   if lld.line_length > 850 then
     w('\n' .. nvimau_start)
   end
@@ -126,7 +135,7 @@ w('\n\nsyn case match')
 local vimfun_start = 'syn keyword vimFuncName contained '
 w('\n\n' .. vimfun_start)
 local funcs = mpack.unpack(io.open(funcs_file, 'rb'):read("*all"))
-for name, _ in pairs(funcs) do
+for _, name in ipairs(sorted_keys(funcs)) do
   if name then
     if lld.line_length > 850 then
       w('\n' .. vimfun_start)

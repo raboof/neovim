@@ -52,7 +52,7 @@ funcsdata:close()
 
 
 local names = vim.tbl_keys(funcs)
-
+table.sort(names)
 local neworder, hashfun = hashy.hashy_hash("find_internal_func", names, function (idx)
   return "functions["..idx.."].name"
 end)
