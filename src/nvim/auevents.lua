@@ -125,25 +125,37 @@ return {
     'WinScrolled',            -- after scrolling a window
   },
   aliases = {
-    BufCreate = 'BufAdd',
-    BufRead = 'BufReadPost',
-    BufWrite = 'BufWritePre',
-    FileEncoding = 'EncodingChanged',
+    {
+      'BufCreate',
+      'BufAdd'
+    },
+    {
+      'BufRead',
+      'BufReadPost'
+    },
+    {
+      'BufWrite',
+      'BufWritePre'
+    },
+    {
+      'FileEncoding',
+      'EncodingChanged'
+    },
   },
   -- List of nvim-specific events or aliases for the purpose of generating
   -- syntax file
   nvim_specific = {
-    BufModifiedSet=true,
-    DiagnosticChanged=true,
-    LspAttach=true,
-    LspDetach=true,
-    RecordingEnter=true,
-    RecordingLeave=true,
-    Signal=true,
-    TabNewEntered=true,
-    TermClose=true,
-    TermOpen=true,
-    UIEnter=true,
-    UILeave=true,
+    'BufModifiedSet',
+    'DiagnosticChanged',
+    'LspAttach',
+    'LspDetach',
+    'RecordingEnter',
+    'RecordingLeave',
+    'Signal',
+    'TabNewEntered',
+    'TermClose',
+    'TermOpen',
+    'UIEnter',
+    'UILeave',
   },
 }
