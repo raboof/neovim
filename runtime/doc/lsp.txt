@@ -1308,6 +1308,15 @@ refresh()                                         *vim.lsp.codelens.refresh()*
       autocmd BufEnter,CursorHold,InsertLeave <buffer> lua vim.lsp.codelens.refresh()
 <
 
+reset({client_id}, {bufnr})                         *vim.lsp.codelens.reset()*
+    Reset the lenses
+
+    Parameters: ~
+      • {client_id}  (number|nil) Resets lenses of the given client_id, or all
+                     if nil
+      • {bufnr}      (number|nil) Reset lenses for the given buffer, or all
+                     buffers if nil
+
 run()                                                 *vim.lsp.codelens.run()*
     Run the code lens in the current line
 
